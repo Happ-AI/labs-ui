@@ -1,0 +1,311 @@
+/*
+ * Labs UI tokens — the look of labs.happ.tools (orange accent, ink surfaces,
+ * Inter + JetBrains Mono). Values match labs-client src/app/globals.css.
+ * Brand orange #ff7a1a carries white text at only 2.6:1, so filled buttons
+ * use --primary #c2410c (5.2:1); orange text uses --link #b34700.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--primary: #c2410c;
+	--primary-hover: #9a3412;
+	--primary-light: #ffeadb;
+	--primary-transparent: rgb(255 122 26 / 8%);
+	--link: #b34700;
+
+	--white: #ffffff;
+	--black: #000000;
+	--light: #717680;
+	--always-white: #ffffff;
+
+	--light-grey: #f4f4f6;
+	--dark-grey: #6f6f6f;
+	--border-color: #e8e8e8;
+	--border-strong: #dbdbdb;
+
+	--surface-muted: #fafafb;
+	--text-secondary: #4a5568;
+	--text-tertiary: #717680;
+
+	--warning: #d86d3f;
+	--danger: #e53e3e;
+	--success: #6ab53a;
+
+	/* Тональные пары для мягких бейджей. */
+	--warning-bg: #fff3cd;
+	--warning-text: #856404;
+	--warning-border: #ffc107;
+	--danger-transparent: rgb(239 68 68 / 10%);
+	--success-transparent: rgb(34 197 94 / 10%);
+	--info-bg: #d1ecf1;
+	--info-text: #0c5460;
+	--info-border: #17a2b8;
+
+	--radius: 7.5px;
+	--radius-lg: 12px;
+	--shadow: 0 2px 6px 0 rgb(16 24 40 / 6%);
+}
+
+
+.dark {
+	--primary: #d9520e;
+	--primary-hover: #c2410c;
+	--primary-light: rgb(255 122 26 / 18%);
+	--primary-transparent: rgb(255 122 26 / 12%);
+	--link: #ff9a52;
+
+	--white: #13161d;
+	--black: #ffffff;
+	--light: #717680;
+	--always-white: #ffffff;
+
+	--light-grey: #181d27;
+	--dark-grey: #a0aec0;
+	--border-color: #252b37;
+	--border-strong: #2e333d;
+
+	--surface-muted: #1a1f2a;
+	--text-secondary: #a0aec0;
+	--text-tertiary: #717680;
+
+	--warning-bg: rgb(255 193 7 / 15%);
+	--warning-text: #ffc107;
+	--warning-border: rgb(255 193 7 / 30%);
+	--danger-transparent: rgb(239 68 68 / 15%);
+	--success-transparent: rgb(34 197 94 / 15%);
+	--info-bg: rgb(23 162 184 / 15%);
+	--info-text: #63cdd9;
+	--info-border: rgb(23 162 184 / 30%);
+
+	--shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+}
+
+@theme inline {
+	--font-sans: Inter, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+	--radius-sm: 4px;
+	--radius-md: var(--radius);
+	--radius-lg: var(--radius-lg);
+
+	--color-primary: var(--primary);
+	--color-primary-hover: var(--primary-hover);
+	--color-primary-light: var(--primary-light);
+	--color-primary-transparent: var(--primary-transparent);
+	--color-link: var(--link);
+
+	--color-white: var(--white);
+	--color-black: var(--black);
+	--color-light: var(--light);
+	--color-always-white: var(--always-white);
+	--color-light-grey: var(--light-grey);
+	--color-dark-grey: var(--dark-grey);
+	--color-border: var(--border-color);
+	--color-border-strong: var(--border-strong);
+	--color-surface-muted: var(--surface-muted);
+	--color-text-secondary: var(--text-secondary);
+	--color-text-tertiary: var(--text-tertiary);
+
+	--color-warning: var(--warning);
+	--color-danger: var(--danger);
+	--color-success: var(--success);
+
+	--color-warning-bg: var(--warning-bg);
+	--color-warning-text: var(--warning-text);
+	--color-warning-border: var(--warning-border);
+	--color-danger-transparent: var(--danger-transparent);
+	--color-success-transparent: var(--success-transparent);
+	--color-info-bg: var(--info-bg);
+	--color-info-text: var(--info-text);
+	--color-info-border: var(--info-border);
+
+	/* Нейтральные имена (background/foreground/…) для сторонних примитивов. */
+	--color-background: var(--white);
+	--color-foreground: var(--black);
+	--color-card: var(--white);
+	--color-card-foreground: var(--black);
+	--color-popover: var(--white);
+	--color-popover-foreground: var(--black);
+	--color-primary-foreground: var(--always-white);
+	--color-secondary: var(--light-grey);
+	--color-secondary-foreground: var(--black);
+	--color-muted: var(--light-grey);
+	--color-muted-foreground: var(--text-tertiary);
+	--color-accent: var(--light-grey);
+	--color-accent-foreground: var(--black);
+	--color-destructive: var(--danger);
+	--color-destructive-foreground: var(--always-white);
+	--color-input: var(--border-color);
+	--color-ring: var(--primary);
+
+	/* Те же токены как plain var(). */
+	--background: var(--white);
+	--foreground: var(--black);
+	--card: var(--white);
+	--card-foreground: var(--black);
+	--popover: var(--white);
+	--popover-foreground: var(--black);
+	--primary-foreground: var(--always-white);
+	--secondary: var(--light-grey);
+	--secondary-foreground: var(--black);
+	--muted: var(--light-grey);
+	--muted-foreground: var(--text-tertiary);
+	--accent: var(--light-grey);
+	--accent-foreground: var(--black);
+	--destructive: var(--danger);
+	--destructive-foreground: var(--always-white);
+	--input: var(--border-color);
+	--ring: var(--primary);
+	--border: var(--border-color);
+}
+
+@theme {
+	/* Brand — Labs orange. primary = brand-600. */
+	--color-brand-25: #fff5ed;
+	--color-brand-50: #ffeadb;
+	--color-brand-100: #ffdcc2;
+	--color-brand-200: #ffcba6;
+	--color-brand-300: #ffb47e;
+	--color-brand-400: #ff9d55;
+	--color-brand-500: #ff8a33;
+	--color-brand-600: #ff7a1a;
+	--color-brand-700: #e8660a;
+	--color-brand-800: #c25200;
+	--color-brand-900: #9a4100;
+	--color-brand-950: #6b2c00;
+
+	/* Gray (neutral) — overrides Tailwind default gray. */
+	--color-gray-25: #fdfdfd;
+	--color-gray-50: #fafafa;
+	--color-gray-100: #f5f5f5;
+	--color-gray-200: #e9eaeb;
+	--color-gray-300: #d5d7da;
+	--color-gray-400: #a4a7ae;
+	--color-gray-500: #717680;
+	--color-gray-600: #535862;
+	--color-gray-700: #414651;
+	--color-gray-800: #252b37;
+	--color-gray-900: #181d27;
+	--color-gray-950: #0a0d12;
+
+	/* Error */
+	--color-error-25: #fffbfa;
+	--color-error-50: #fef3f2;
+	--color-error-100: #fee4e2;
+	--color-error-200: #fecdca;
+	--color-error-300: #fda29b;
+	--color-error-400: #f97066;
+	--color-error-500: #f04438;
+	--color-error-600: #d92d20;
+	--color-error-700: #b42318;
+	--color-error-800: #912018;
+	--color-error-900: #7a271a;
+	--color-error-950: #55160c;
+
+	/* Warning */
+	--color-warning-25: #fffcf5;
+	--color-warning-50: #fffaeb;
+	--color-warning-100: #feefc7;
+	--color-warning-200: #fedf89;
+	--color-warning-300: #fec84b;
+	--color-warning-400: #fdb022;
+	--color-warning-500: #f79009;
+	--color-warning-600: #dc6803;
+	--color-warning-700: #b54708;
+	--color-warning-800: #93370d;
+	--color-warning-900: #792e0d;
+	--color-warning-950: #4e1d09;
+
+	/* Success */
+	--color-success-25: #f6fef9;
+	--color-success-50: #ecfdf3;
+	--color-success-100: #d1fadf;
+	--color-success-200: #a6f4c5;
+	--color-success-300: #6ce9a6;
+	--color-success-400: #32d583;
+	--color-success-500: #12b76a;
+	--color-success-600: #039855;
+	--color-success-700: #027948;
+	--color-success-800: #05603a;
+	--color-success-900: #054f31;
+	--color-success-950: #053321;
+
+	/* Blue light — info / link accents (Untitled "Blue light") */
+	--color-blue-light-25: #f5fbff;
+	--color-blue-light-50: #f0f9ff;
+	--color-blue-light-100: #e0f2fe;
+	--color-blue-light-200: #b9e6fe;
+	--color-blue-light-300: #7cd4fd;
+	--color-blue-light-400: #36bffa;
+	--color-blue-light-500: #0ba5ec;
+	--color-blue-light-600: #0086c9;
+	--color-blue-light-700: #026aa2;
+	--color-blue-light-800: #065986;
+	--color-blue-light-900: #0b4a6f;
+	--color-blue-light-950: #062b41;
+
+	/* Purple — manual/operator accent (Untitled "Purple") */
+	--color-purple-25: #fafaff;
+	--color-purple-50: #f4f3ff;
+	--color-purple-100: #ebe9fe;
+	--color-purple-200: #d9d6fe;
+	--color-purple-300: #bdb4fe;
+	--color-purple-400: #9b8afb;
+	--color-purple-500: #7a5af8;
+	--color-purple-600: #7f56d9;
+	--color-purple-700: #6941c6;
+	--color-purple-800: #53389e;
+	--color-purple-900: #42307d;
+	--color-purple-950: #2c1c5f;
+}
+
+/* Labs "ink": the dark brand pane, video surfaces, tooltips. */
+@theme {
+	--color-ink: #08090b;
+	--color-ink-2: #0f1013;
+	--color-ink-text: #f3f3f4;
+	--color-ink-muted: #b3b6bd;
+	--color-ink-dim: #7d818a;
+	--color-canvas: #f7f7f8;
+}
+
+@layer base {
+	* {
+		border-color: var(--border-color);
+	}
+
+	html,
+	body,
+	#root {
+		height: 100%;
+	}
+
+	html {
+		color-scheme: light;
+	}
+
+	body {
+		margin: 0;
+		background: var(--color-canvas);
+		color: var(--black);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+}
+
+
+/* Motion: one ease-out for everything entering/leaving and a single transition utility for pressables. */
+@theme {
+	--ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@utility press {
+	transition-property: color, background-color, border-color, box-shadow, opacity, filter;
+	transition-timing-function: var(--ease-out-strong);
+	transition-duration: 150ms;
+}
