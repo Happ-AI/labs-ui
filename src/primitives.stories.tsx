@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 
 import sample from "./sample.mp4";
-import { Button, type Edition, EditionSwitcher, Field, VideoPlayer } from "./index";
+import { ru } from "react-day-picker/locale";
+
+import { Button, DateField, DateRangeField, type Edition, EditionSwitcher, Field, VideoPlayer } from "./index";
 
 const meta = { title: "Labs UI/Primitives/Basics", parameters: { layout: "padded" } } satisfies Meta;
 export default meta;
@@ -82,3 +84,20 @@ function Switcher() {
 export const Edition_Switcher: Story = { name: "Edition switcher", render: () => <Switcher /> };
 
 export const Video: Story = { render: () => <VideoPlayer src={sample} startAt={5} className="max-w-[720px] rounded-2xl" /> };
+
+const RU_DATES = { from: "С", to: "по", last7: "7 дней", last30: "30 дней", reset: "Сбросить", clear: "Сбросить" };
+function Dates({ native }: { native: boolean }) {
+	const [range, setRange] = useState({ from: "", to: "" });
+	const [day, setDay] = useState("");
+	return (
+		<div className="flex flex-wrap items-center gap-2">
+			<DateRangeField label="Период" {...range} onChange={setRange} native={native} locale={ru} labels={RU_DATES} />
+			<DateField label="До даты" value={day} onChange={setDay} clearable native={native} locale={ru} />
+			<DateRangeField label="Period" from="" to="" onChange={() => undefined} native={native} />
+		</div>
+	);
+}
+/** Desktop: calendar in a popover. */
+export const Date_Fields: Story = { name: "Date fields", render: () => <Dates native={false} /> };
+/** Touch: the OS date picker opens on tap (try it in a phone simulator). */
+export const Date_Fields_Touch: Story = { name: "Date fields (touch)", render: () => <Dates native /> };

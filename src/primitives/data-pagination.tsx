@@ -10,6 +10,7 @@ export interface DataPaginationLabels {
 	rowsPerPage?: string;
 	previousPage?: string;
 	nextPage?: string;
+	pagination?: string;
 }
 
 export interface DataPaginationProps {
@@ -24,7 +25,7 @@ export interface DataPaginationProps {
 	className?: string;
 }
 
-const DEFAULT_LABELS: Required<DataPaginationLabels> = { rowsPerPage: "Rows per page", previousPage: "Previous page", nextPage: "Next page" };
+const DEFAULT_LABELS: Required<DataPaginationLabels> = { rowsPerPage: "Rows per page", previousPage: "Previous page", nextPage: "Next page", pagination: "Pagination" };
 
 /** "1–20 / 134" with previous/next; optional page-size select. */
 export function DataPagination({ page, pageSize, totalCount, onPageChange, onPageSizeChange, pageSizeOptions = [10, 20, 50, 100], labels, className }: DataPaginationProps) {
@@ -42,7 +43,7 @@ export function DataPagination({ page, pageSize, totalCount, onPageChange, onPag
 				<div className="flex items-center gap-2">
 					<span className="text-[13px] text-gray-500">{l.rowsPerPage}</span>
 					<Select value={String(pageSize)} onValueChange={(v) => onPageSizeChange(Number(v))}>
-						<SelectTrigger size="sm" className="w-[76px]">
+						<SelectTrigger size="sm" className="w-[76px]" aria-label={l.rowsPerPage}>
 							<SelectValue />
 						</SelectTrigger>
 						<SelectContent>
@@ -55,7 +56,7 @@ export function DataPagination({ page, pageSize, totalCount, onPageChange, onPag
 					</Select>
 				</div>
 			) : null}
-			<nav aria-label="pagination" className="flex items-center gap-1">
+			<nav aria-label={l.pagination} className="flex items-center gap-1">
 				<Button variant="ghost" size="icon-sm" aria-label={l.previousPage} disabled={page <= 0} onClick={() => onPageChange(page - 1)}>
 					<ChevronLeft className="size-5" />
 				</Button>

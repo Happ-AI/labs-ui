@@ -10,6 +10,7 @@ export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from ".
 export { Field, type FieldProps } from "./field";
 export { Badge, type BadgeVariant } from "./primitives/badge";
 export { Checkbox } from "./primitives/checkbox";
+export { DateField, type DateFieldLabels, type DateFieldProps, DateRangeField, type DateRangeFieldProps, type DateRangeValue, formatDayShort, useTouchPicker } from "./primitives/date-field";
 export { DataPagination, type DataPaginationLabels, type DataPaginationProps } from "./primitives/data-pagination";
 export { DeleteDialog, type DeleteDialogProps } from "./primitives/delete-dialog";
 export { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "./primitives/dialog";
