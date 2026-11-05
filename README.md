@@ -7,7 +7,7 @@ Design system of Happ Labs products (labs.happ.tools): tokens, primitives, app s
 Pin a release tag (no registry, no token):
 
 ```json
-"@happ-ai/labs-ui": "https://github.com/Happ-AI/labs-ui/archive/refs/tags/v0.1.0.tar.gz"
+"@happ-ai/labs-ui": "https://github.com/Happ-AI/labs-ui/archive/refs/tags/v0.1.1.tar.gz"
 ```
 
 Peer dependencies: `react`, `react-dom`, `radix-ui`, `lucide-react`, `tailwindcss` v4, optionally `sonner`.

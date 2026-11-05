@@ -181,7 +181,7 @@
 	--color-gray-200: #e9eaeb;
 	--color-gray-300: #d5d7da;
 	--color-gray-400: #a4a7ae;
-	--color-gray-500: #717680;
+	--color-gray-500: #656972; /* ≥ 4.5:1 on white and canvas (WCAG AA body text) */
 	--color-gray-600: #535862;
 	--color-gray-700: #414651;
 	--color-gray-800: #252b37;
